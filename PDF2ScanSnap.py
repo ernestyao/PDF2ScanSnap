@@ -7,7 +7,10 @@ ScanSnap = "ScanSnap Manager #iX500 (W)"
 def printMeta(fileName):
     reader = PdfReader(fileName)
     meta = reader.metadata
-    print("Original Creator："+meta.creator)
+    if not meta.creator is None:
+        print("Original Creator："+meta.creator)
+    else:
+        print("Creator is null")
 
 
 def writeMeta(fileName):
